@@ -17,7 +17,6 @@ if (form) {
       body: JSON.stringify(payload)
     });
 
-    // window.location.href = 'users.html';
   });
 } else {
   fetchUsers();
