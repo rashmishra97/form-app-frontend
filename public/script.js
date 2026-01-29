@@ -21,9 +21,9 @@ if (form) {
 } else {
   fetchUsers();
 }
-
 async function fetchUsers() {
-  const response = await fetch('http://127.0.0.1:5001/api/users');
+  // const response = await fetch('http://127.0.0.1:5001/api/users');
+  const response = await fetch('http://172-31-41-153:5001/api/users');
   const users = await response.json();
 
   const container = document.getElementById('usersContainer');
