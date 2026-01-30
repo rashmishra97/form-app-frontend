@@ -1,5 +1,4 @@
 const form = document.getElementById('userForm');
-13.201.58.102
 const BACKEND_URL = "http://13.201.58.102:5001";
 // const BACKEND_URL = "http://172-31-41-153:5001";
 
