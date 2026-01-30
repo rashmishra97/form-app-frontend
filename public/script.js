@@ -1,6 +1,7 @@
-const form = document.getElementById('userForm');
 const BACKEND_URL = "http://13.201.58.102:5001";
-// const BACKEND_URL = "http://172-31-41-153:5001";
+
+// ---------- FORM SUBMIT LOGIC ----------
+const form = document.getElementById('userForm');
 
 if (form) {
   form.addEventListener('submit', async (e) => {
@@ -13,22 +14,33 @@ if (form) {
       contact: document.getElementById('contact').value
     };
 
-    await fetch(`${BACKEND_URL}/api/submit`, {
+    const response = await fetch(`${BACKEND_URL}/api/submit`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     });
 
+    if (response.ok) {
+      // ✅ Redirect to users page
+      window.location.href = "users.html";
+    } else {
+      alert("Failed to save data");
+    }
   });
-} else {
+}
+
+// ---------- USERS PAGE LOGIC ----------
+const usersContainer = document.getElementById('usersContainer');
+
+if (usersContainer) {
   fetchUsers();
 }
+
 async function fetchUsers() {
-  // const response = await fetch('http://127.0.0.1:5001/api/users');
   const response = await fetch(`${BACKEND_URL}/api/users`);
   const users = await response.json();
 
-  const container = document.getElementById('usersContainer');
+  usersContainer.innerHTML = "";
 
   users.forEach((user, index) => {
     const box = document.createElement('div');
@@ -42,6 +54,6 @@ async function fetchUsers() {
       <p><strong>Contact:</strong> ${user.contact}</p>
     `;
 
-    container.appendChild(box);
+    usersContainer.appendChild(box);
   });
 }
