@@ -1,4 +1,6 @@
-const BACKEND_URL = "http://13.201.58.102:5001";
+// const BACKEND_URL = "http://13.201.58.102:5001";
+const BACKEND_URL = "http://form-backend-alb-1084917983.ap-south-1.elb.amazonaws.com";
+
 
 // ---------- FORM SUBMIT LOGIC ----------
 const form = document.getElementById('userForm');
