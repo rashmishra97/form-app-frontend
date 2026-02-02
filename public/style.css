@@ -55,12 +55,12 @@ button {
   color: white;
   font-size: 16px;
   border: none;
-  border-radius: 6px;
+  border-radius: 12px;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #125aa0;
+  background-color: rgb(105, 111, 117);
 }
 
 
@@ -73,7 +73,7 @@ button:hover {
 
 
 .user-box {
-  background-color: #f9fafb;
+  background-color: #839c62;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 15px;
@@ -82,7 +82,7 @@ button:hover {
 .user-box h3 {
   margin-top: 0;
   color: #333;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #d67d7d;
   padding-bottom: 8px;
 }
 
